@@ -78,11 +78,28 @@ tape('add and get clone', function (t) {
   setTimeout(function () {
     t.same(cp.get('hello'), 'copy')
     rc.clear()
+    cp.clear();
     t.end()
   }, 35)
 })
 
-tape('maxAge', function (t) {
+tape('add and get clone faaaaaaaast', function (t) {
+  var rc = cache1
+  var cp = cache2
+
+  rc.clear();
+  cp.clear();
+
+  rc.set('hello', 'fastcopy')
+  setTimeout(function () {
+    t.same(cp.get('hello'), 'fastcopy')
+    rc.clear()
+    cp.clear();
+    t.end()
+  }, 1)
+})
+
+tape('shut down caches', function (t) {
   var rc = cache1
 
   rc.clear();
