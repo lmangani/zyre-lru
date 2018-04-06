@@ -13,7 +13,7 @@ var test = function(){
 }
 
 setTimeout(test, 2000);
-setTimeout(test, 3000);
+setTimeout(test, 2100);
 
 process.on('SIGINT', function(params) {
     db1.stop();
