@@ -1,17 +1,25 @@
-[![Build Status](https://travis-ci.org/lmangani/zyre-lru.svg?branch=master)](https://travis-ci.org/lmangani/zyre-lru)
 
-# Zyre-LRU
+# Zyre-LRU <img src="https://user-images.githubusercontent.com/1423657/38137158-590eefbc-3423-11e8-96dd-487022b5618c.gif" width=100 /><img src="https://travis-ci.org/lmangani/zyre-lru.svg?branch=master"/>
 [ZRE](https://rfc.zeromq.org/spec:20/ZRE/) enabled decentralised &amp; distributed LRU Cache w/ TTL
 
-Zyre-LRU will spawn multiple local LRUs featuring local `get` and distributed `set` actions via ZRE `whisper` or `shout` events
+Zyre-LRU will spawn multiple ZRE `whisper` or `shout` syncronized LRUs:
+* local 
+  * `get`, `has`,`expire`
+* distributed 
+  * `set`
 
 ### Usage
-````
+```javascript
 const ZDB = require('zyre-lru');
+```
+
+#### Peering
+```javascript
 // Initialize peers
 const db1 = new ZDB({ group: "lru1", size: 1024, discoveryPort: 4567, name: "LRU #1", auto: true });
 const db2 = new ZDB({ group: "lru2", size: 1024, discoveryPort: 4567, name: "LRU #2", auto: true });
 
+// Set Value
 db1.set('test',123);
 db1.get('test'); //should return 123
 
@@ -19,14 +27,14 @@ db1.get('test'); //should return 123
 
 db2.get('test'); // should return 123
 
-// Shutdown peers
+// Shutdown peers when done
 db1.stop();
 db2.stop();
 
 ````
 
-### LRU Commands
-```
+#### LRU Commands
+```javascript
 const ZDB = require('zyre-lru');
 const cache = new ZDB({ group: "lru1", size: 1024, discoveryPort: 4567, name: "LRU #1", auto: true });
 
