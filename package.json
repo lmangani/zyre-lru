@@ -1,6 +1,6 @@
 {
   "name": "zyre-lru",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ZRE enabled decentralized and distributed LRU Cache w/ TTL",
   "main": "index.js",
   "scripts": {
