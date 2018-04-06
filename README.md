@@ -8,6 +8,8 @@
 
 LRU Cache entries can store and distribute *Text, JSON or Binary* payloads with optional *TTL* expiration
 
+--------------
+
 ### Usage
 ```javascript
 const ZDB = require('zyre-lru');
@@ -55,6 +57,10 @@ cache.set("item", 1, { meta: { custom: 1 } });
 // Then retrieve it.
 cache.meta("item"); //-> { custom: 1 }
 ```
+
+#### Project Status
+* *Experimental! Use at your own risk!*
+* *PRs and Ideas are highly welcome!*
 
 ### Acknowledgement 
 Zyre-LRU is spinoff clone of [zyre-nedb](https://github.com/arcoirislabs/zyre-nedb) using [zyre.js](https://github.com/interpretor/zyre.js) and [receptacle](https://github.com/DylanPiercey/receptacle)
