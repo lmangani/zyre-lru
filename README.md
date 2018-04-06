@@ -2,11 +2,7 @@
 # Zyre-LRU <img src="https://user-images.githubusercontent.com/1423657/38137158-590eefbc-3423-11e8-96dd-487022b5618c.gif" width=100 /><img src="https://travis-ci.org/lmangani/zyre-lru.svg?branch=master"/>
 [ZRE](https://rfc.zeromq.org/spec:20/ZRE/) enabled decentralised &amp; distributed LRU Cache w/ TTL
 
-Zyre-LRU will spawn multiple ZRE `whisper` or `shout` syncronized LRUs:
-* local 
-  * `get`, `has`,`expire`
-* distributed 
-  * `set`
+**Zyre-LRU** will spawn multiple **LRUs** with `set` actions syncronized via `whisper` or `shout`  
 
 ### Usage
 ```javascript
