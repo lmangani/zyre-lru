@@ -2,7 +2,11 @@
 # Zyre-LRU <img src="https://user-images.githubusercontent.com/1423657/38137158-590eefbc-3423-11e8-96dd-487022b5618c.gif" width=100 /><img src="https://travis-ci.org/lmangani/zyre-lru.svg?branch=master"/>
 [ZRE](https://rfc.zeromq.org/spec:20/ZRE/) enabled decentralised &amp; distributed LRU Cache w/ TTL
 
-**Zyre-LRU** will spawn multiple **LRUs** with `set` actions syncronized via `whisper` or `shout`  
+**Zyre-LRU** will spawn multiple **LRUs** discovering each other and syncronizing cache `set` actions via ZRE `whisper`
+
+![ezgif com-optimize 49](https://user-images.githubusercontent.com/1423657/38445147-8e548108-39f2-11e8-8d0a-2b973070c50a.gif)
+
+LRU Cache entries can store and distribute *Text, JSON or Binary* payloads with optional *TTL* expiration
 
 ### Usage
 ```javascript
